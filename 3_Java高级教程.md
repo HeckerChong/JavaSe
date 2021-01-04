@@ -110,13 +110,13 @@ public class Test02Scanner {
 格式：
 
 ```java
-new 类名(参数列表)；
+new 类名(参数列表);
 ```
 
 举例：
 
 ```java
-new Scanner(System.in)；
+new Scanner(System.in);
 ```
 
 **应用场景**
