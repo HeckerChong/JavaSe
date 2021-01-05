@@ -193,3 +193,12 @@ int i = r.nextInt();
 ```
 
 ## 2.1 Random使用步骤
+
+**查看类**
+* > `java.util.Random`：该类需要 import导入使后使用。
+
+**查看构造方法**
+* > `public Random()`：创建一个新的随机数生成器。
+
+**查看成员方法**
+* > `public int nextInt(int n)`：返回一个伪随机数，范围在0（包括）和指定值 n（不包括）之间的`int`值。
