@@ -586,13 +586,16 @@ public class String_Demo03 {
 ```java
 public class String_Demo03 {
 
-public static void main(String[] args) { 
-    //创建字符串对象
-    String s = "aa|bb|cc";
-    String[] strArray = s.split("|"); // ["aa","bb","cc"]
+    public static void main(String[] args) { 
 
-    for(int x = 0; x < strArray.length; x++) { 
-        System.out.println(strArray[x]); // aa bb cc 
+        //创建字符串对象
+        String s = "aa|bb|cc";
+        // ["aa","bb","cc"]
+        String[] strArray = s.split("\\|");
+
+        for(int x = 0; x < strArray.length; x++) { 
+            // aa bb cc 
+            System.out.println(strArray[x]);
         }
     }
 }
