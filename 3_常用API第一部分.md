@@ -570,7 +570,6 @@ public class String_Demo03 {
     String str = "it123 it321"; 
     String replace = str.replace("it", "IT"); 
     System.out.println(replace); // IT123 IT321 
-    System.out.println("‐‐‐‐‐‐‐‐‐‐‐");
     }
 }
 ```
