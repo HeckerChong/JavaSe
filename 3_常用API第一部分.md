@@ -764,15 +764,15 @@ public static void tostringTest() {
 **示例：**
 
 ```java
-double d1 = Math.abs(‐5); //d1的值为5 
+double d1 = Math.abs(-5); //d1的值为5 
 double d2 = Math.abs(5); //d2的值为5
 
 double d1 = Math.ceil(3.3); //d1的值为 4.0 
-double d2 = Math.ceil(‐3.3); //d2的值为 ‐3.0 
+double d2 = Math.ceil(-3.3); //d2的值为 ‐3.0 
 double d3 = Math.ceil(5.1); //d3的值为 6.0
 
 double d1 = Math.floor(3.3); //d1的值为3.0 
-double d2 = Math.floor(‐3.3); //d2的值为‐4.0 
+double d2 = Math.floor(-3.3); //d2的值为‐4.0 
 double d3 = Math.floor(5.1); //d3的值为 5.0
 
 long d1 = Math.round(5.5); //d1的值为6.0 
