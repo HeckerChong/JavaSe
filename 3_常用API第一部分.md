@@ -1,7 +1,7 @@
 # 第一章 Scanner类
 
 **Scanner类**
-一个可以解析基本类型和字符串的简单文本扫描器。 例如，以下代码使用户能够从 System.in 中读取一个数：
+一个可以解析基本类型和字符串的简单文本扫描器。 例如，以下代码使用户能够从System.in中读取一个数：
 
 ```java
 Scanner sc = new Scanner(System.in); 
@@ -228,7 +228,7 @@ public class Demo01_Random {
 
 # 第三章 ArrayList类
 
-## 3.1 什么是ArrayList类
+## 3.1 ArrayList类概述
 
 `java.util.ArrayList`是大小**可变的数组**的实现，存储在内的数据称为元素。此类提供一些方法来操作内部存储的元素。ArrayList中可不断添加元素，其大小也自动增长。
 
@@ -247,7 +247,7 @@ ArrayList<String>，ArrayList<Student>
 
 * `public ArrayList()`：构造一个内容为空的集合。
 
-基本格式:
+**基本格式**:
 
 ```java
 ArrayList<String> list = new ArrayList<String>();
@@ -396,7 +396,7 @@ public class Test02ArrayList {
 
 # 第四章 String类
 
-**概述**
+## 4.1 String类概述
 
 `java.lang.String`类代表字符串。Java程序中所有的字符串文字（例如"abc"）都可以被看作是实现此类的实例。类`String`中包括用于检查各个字符串的方法，比如用于`比较`字符串，`搜索`字符串，`提取`字符串以及创建具有翻译为`大写`或`小写`的所有字符的字符串的副本。
 
@@ -430,7 +430,7 @@ String str = new String(data);
 //String底层是靠字符数组实现的。
 ```
 
-## 4.1 使用步骤
+## 4.2 使用步骤
 
 * **查看类**
   *  java.lang.String：此类不需要导入。
@@ -455,7 +455,7 @@ byte bytes[] = { 97, 98, 99 };
 String str3 = new String(bytes);
 ```
 
-## 4.2 常用方法
+## 4.3 常用方法
 
 **判断功能的方法**
 
@@ -603,10 +603,10 @@ public class String_Demo03 {
 
 # 第五章 static类
 
-**概述**
+## 5.1 static类概述
 `static`关键字的使用，它可以用来修饰的成员变量和成员方法，被修饰的成员是属于类的，而不是单单是属于某个对象的。也就是说，既然属于类，就可以不靠创建对象来调用了。
 
-## 5.1 定义和使用格式
+## 5.2 定义和使用格式
 
 **类变量**
 
@@ -661,7 +661,7 @@ static修饰的成员可以并且建议通过**类名直接访问**。虽然也�
 类名.静态方法名(参数);
 ```
 
-## 5.2 静态原理图解
+## 5.3 静态原理图解
 
 `static`修饰的内容：
 
@@ -671,7 +671,7 @@ static修饰的成员可以并且建议通过**类名直接访问**。虽然也�
 
 - ![静态原理图解](./images/静态原理图解.png)
 
-## 5.3 静态代码块
+## 5.4 静态代码块
 
 * **静态代码块：** 定义在成员位置，使用static修饰的代码块{}。
   * **位置：** 类中方法外。
@@ -713,11 +713,11 @@ public class Game{
 
 # 第六章 Arrays类
 
-**概述**
+## 6.1 Arrays类概述
 
 `java.util.Arrays`此类包含用来操作数组的各种方法，比如排序和搜索等。其所有方法均为静态方法，调用起来非常简单。
 
-## 6.1 常用方法
+## 6.2 常用方法
 
 * `public static String toString(int[] a)`：返回指定数组内容的字符串表示形式。
 * `public static void sort(int[] a)`：对指定的int型数组按数字升序进行排序。
@@ -751,11 +751,11 @@ public static void tostringTest() {
 
 # 第七章 Math类
 
-**概述**
+## 7.1 Math类概述
 
 `java.lang.Math`类包含用于执行基本数学运算的方法，如初等指数、对数、平方根和三角函数。
 
-## 7.1 基本运算的方法
+## 7.2 基本运算的方法
 
 * `public static double abs(double a)`：返回 double 值的绝对值。
 * `public static double ceil(double a)`：返回大于等于参数的最小的整数（向上取整）。
