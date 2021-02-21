@@ -133,7 +133,8 @@ new Scanner(System.in).nextInt();
 new Scanner(System.in).nextInt();
 ```
 
-> Tips:一个匿名对象，只能使用一次。
+> Tips:
+> 一个匿名对象，只能使用一次。
 
 3. 匿名对象可以作为`方法的参数和返回值`
 
