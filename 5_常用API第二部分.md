@@ -322,7 +322,72 @@ public class Demo07CalendarMethod {
 
 add方法可以对指定日历字段的值进行加减操作，如果第二个参数为正数则加上偏移量，如果为负数则减去偏移量。
 
+```java
+import java.util.Calendar;
 
+public class Demo08CalendarMethod {
+    public static void main(String[] args) {
+        Calendar cal = Calendar.getInstance();
+        System.out.print(year + "年" + month + "月" + dayOfMonth + "日"); // 2018年1月17日
+        // 使用add方法
+        cal.add(Calendar.DAY_OF_MONTH, 2); // 加2天
+        cal.add(Calendar.YEAR, -3); // 减3年
+        System.out.print(year + "年" + month + "月" + dayOfMonth + "日"); // 2015年1月18日; 
+    }
+}
+```
 
+#### 2.3.3.3 getTime方法
 
+Calendar中的getTime方法并不是获取毫秒时刻，而是拿到对应的Date对象。
 
+```java
+import java.util.Calendar;
+import java.util.Date;
+
+public class Demo09CalendarMethod {
+    public static void main(String[] args) {
+        Calendar cal = Calendar.getInstance();
+        Date date = cal.getTime();
+        System.out.println(date); // Tue Jan 16 16:03:09 CST 2018
+    }
+}
+```
+
+> Tips：西方星期的开始为周日，中国为周一。在Calendar类中，月份的表示是以0-11代表1-12月。日期是有大小关系的，时间靠后，时间越大。
+
+# 第三章 System类
+
+`java.lang.System`类中提供了大量的静态方法，可以获取与系统相关的信息或系统级操作，在System类的API文档中，常用的方法有：
+
+* `public static long currentTimeMillis()`：返回以毫秒为单位的当前时间。
+* `public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)`：将数组中指定的数据拷贝到另一个数组中。
+
+## 3.1 currentTimeMillis方法
+
+实际上，currentTimeMillis方法就是 获取当前系统时间与1970年01月01日00:00点之间的毫秒差值。
+
+```java
+import java.util.Date;
+
+public class SystemDemo {
+    public static void main(String[] args) {
+       	//获取当前时间毫秒值
+        System.out.println(System.currentTimeMillis()); // 1516090531144
+    }
+}
+```
+
+## 3.2 arraycopy方法
+
+* `public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)`：将数组中指定的数据拷贝到另一个数组中。
+
+数组的拷贝动作是系统级的，性能很高。System.arraycopy方法具有5个参数，含义分别为：
+
+| 参数序号 | 参数名称    | 参数类型   | 参数含义       |
+| ---- | ------- | ------ | ---------- |
+| 1    | src     | Object | 源数组        |
+| 2    | srcPos  | int    | 源数组索引起始位置  |
+| 3    | dest    | Object | 目标数组       |
+| 4    | destPos | int    | 目标数组索引起始位置 |
+| 5    | length  | int    | 复制元素个数     |
