@@ -391,3 +391,83 @@ public class SystemDemo {
 | 3    | dest    | Object | 目标数组       |
 | 4    | destPos | int    | 目标数组索引起始位置 |
 | 5    | length  | int    | 复制元素个数     |
+
+**示例**
+
+```java
+import java.util.Arrays;
+
+public class Demo11SystemArrayCopy {
+    public static void main(String[] args) {
+        int[] src = new int[]{1,2,3,4,5};
+        int[] dest = new int[]{6,7,8,9,10};
+        System.arraycopy( src, 0, dest, 0, 3);
+        System.out.println(Arrays.toString(src));
+        System.out.println(Arrays.toString(dest));
+        /*代码运行后：两个数组中的元素发生了变化
+         src数组元素[1,2,3,4,5]
+         dest数组元素[1,2,3,9,10]
+        */
+    }
+}
+```
+
+# 第四章 StringBuilder类
+
+## 4.1 字符串拼接问题
+
+由于String类的对象内容不可改变，所以每当进行字符串拼接时，总是会在内存中创建一个新的对象。
+
+**示例**
+
+```java
+public class StringDemo {
+    public static void main(String[] args) {
+        String s = "Hello";
+        s += "World";
+        System.out.println(s);
+    }
+}
+```
+
+在API中对String类的描述：字符串是常量，它们的值在创建后不能被更改。
+
+根据这句话分析代码，其总共产生了三个字符串，即`"Hello"`、`"World"`和`"HelloWorld"`。引用变量s首先指向`Hello`对象，最终指向拼接出来的新字符串对象，即`HelloWord` 。
+
+![](./images/String拼接问题.png)
+
+对字符串进行拼接操作，每次拼接，都会构建一个新的String对象，既耗时，又浪费空间。为了解决这一问题，可以使用`java.lang.StringBuilder`类。
+
+## 4.2 StringBuilder概述
+
+查阅`java.lang.StringBuilder`的API，StringBuilder又称为可变字符序列，它是一个类似于 String 的字符串缓冲区，通过某些方法调用可以改变该序列的长度和内容。
+
+原来StringBuilder是个字符串的缓冲区，即它是一个容器，容器中可以装很多字符串。并且能够对其中的字符串进行各种操作。
+
+它的内部拥有一个数组用来存放字符串内容，进行字符串拼接时，直接在数组中加入新内容。StringBuilder会自动维护数组的扩容。原理如下图所示：(默认16字符空间，超过自动扩充)
+
+![](./images/StringBuilder的原理.png)
+
+## 4.3 构造方法
+
+**常用构造方法：**
+
+* `public StringBuilder()`：构造一个空的StringBuilder容器。
+* `public StringBuilder(String str)`：构造一个StringBuilder容器，并将字符串添加进去。
+
+```java
+public class StringBuilderDemo {
+    public static void main(String[] args) {
+        StringBuilder sb1 = new StringBuilder();
+        System.out.println(sb1); // (空白)
+        // 使用带参构造
+        StringBuilder sb2 = new StringBuilder("test");
+        System.out.println(sb2); // test
+    }
+}
+```
+
+## 4.4 常用方法
+
+* `public StringBuilder append(...)`：添加任意类型数据的字符串形式，并返回当前对象自身。
+* `public String toString()`：将当前StringBuilder对象转换为String对象。
