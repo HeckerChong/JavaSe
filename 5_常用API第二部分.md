@@ -239,7 +239,7 @@ public class Demo04DateFormatMethod {
 
 ### 2.3.1 概述
 
-`java.util.Calendar`是日历类，在Date后出现，替换掉了许多Date的方法。该类将所有可能用到的时间信息封装为静态成员变量，方便获取。日历类就是方便获取各个时间属性的。
+`java.util.Calendar`是日历类，在Calendar后出现，替换掉了许多Date的方法。该类将所有可能用到的时间信息封装为静态成员变量，方便获取。日历类就是方便获取各个时间属性的。
 
 ### 2.3.2 获取方式
 
@@ -440,9 +440,9 @@ public class StringDemo {
 
 ## 4.2 StringBuilder概述
 
-查阅`java.lang.StringBuilder`的API，StringBuilder又称为可变字符序列，它是一个类似于 String 的字符串缓冲区，通过某些方法调用可以改变该序列的长度和内容。
+`java.lang.StringBuilder`的API，StringBuilder又称为可变字符序列，是一个类似于String的字符串缓冲区，通过某些方法调用可以改变该序列的长度和内容。
 
-原来StringBuilder是个字符串的缓冲区，即它是一个容器，容器中可以装很多字符串。并且能够对其中的字符串进行各种操作。
+StringBuilder是个字符串的缓冲区，即它是一个容器，容器中可以装很多字符串。并且能够对其中的字符串进行各种操作。
 
 它的内部拥有一个数组用来存放字符串内容，进行字符串拼接时，直接在数组中加入新内容。StringBuilder会自动维护数组的扩容。原理如下图所示：(默认16字符空间，超过自动扩充)
 
