@@ -432,7 +432,7 @@ public class StringDemo {
 
 在API中对String类的描述：字符串是常量，它们的值在创建后不能被更改。
 
-根据这句话分析代码，其总共产生了三个字符串，即`"Hello"`、`"World"`和`"HelloWorld"`。引用变量s首先指向`Hello`对象，最终指向拼接出来的新字符串对象，即`HelloWord` 。
+根据这句话分析代码，其总共产生了三个字符串，即`"Hello"`、`"World"`和`"HelloWorld"`。引用变量`s`首先指向`Hello`对象，最终指向拼接出来的新字符串对象，即`HelloWord` 。
 
 ![](./images/String拼接问题.png)
 
