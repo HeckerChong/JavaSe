@@ -103,7 +103,30 @@ public static void main(String[] args) throws IOException {
 
 ## 1.6 目录的遍历
 
+**示例：**
 
+```java
+    public static void main(String[] args) {
+
+        File f = new File("/Users/hechong/IdeaProjects/basic_code/FileDemo");
+        result(f);
+
+    }
+
+    public static void result(File file) {
+
+        File[] files = file.listFiles();
+
+        for (File file1:files) {
+
+            if (file1.isFile()){
+                System.out.println(file1.getAbsolutePath());
+            }else {
+                result(file1);
+            }
+        }
+    }
+```
 
 
 
