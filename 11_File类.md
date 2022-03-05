@@ -14,6 +14,8 @@
 * `public String getPath()`：将此File转换为路径名字符串。
 * `public String getName()`：返回由此File表示的文件或目录的名称。
 * `public long length()`：返回由此File表示的文件的长度。
+* `public String[] list()`：返回由此抽象路径名所表示的目录中的文件和目录的名称所组成字符串数组。
+* `public File[] listFiles()`：返回一个抽象路径名数组，这些路径名表示此抽象路径名所表示目录中的文件。
 
 **示例：**
 
@@ -128,6 +130,42 @@ public static void main(String[] args) throws IOException {
     }
 ```
 
+## 1.7 文件过滤器
 
+`java.io.FileFilter`是一个接口，是File的过滤器。该接口的对象可以传递给File类的`listFiles(FileFilter)`作为参数，接口中只有一个方法。`boolean accept(File pathname)`。`accept`方法，参数为File，表示当前File下所有的子文件和子目录。保留住则返回true，过滤掉则返回false。
 
+**示例：**
+
+```java
+    public static void main(String[] args) {
+
+        File file = new File("/Users/hechong/IdeaProjects/basic_code/FileDemo");
+
+        printDir(file);
+    }
+
+    public static void printDir(File pathdemo) {
+
+//        File[] files = pathdemo.listFiles(new FileFilter() {
+//            @Override
+//            public boolean accept(File pathname) {
+//                return pathname.getName().endsWith(".java") || pathname.isDirectory();
+//            }
+//        });
+
+        File[] files = pathdemo.listFiles(pathname ->
+            pathname.getName().endsWith(".java") || pathname.isDirectory()
+        );
+
+        for (File file : files) {
+
+            if (file.isFile()) {
+                System.out.println(file);
+            } else {
+                printDir(file);
+            }
+        }
+
+    }
+```
 
